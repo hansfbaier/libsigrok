@@ -607,6 +607,7 @@ SR_PRIV int siglent_sds_receive(int fd, int revents, void *cb_data)
 					sr_session_send(sdi, &packet);
 					g_slist_free(analog.meaning->channels);
 					g_array_free(data, TRUE);
+					g_array_free(float_data, TRUE);
 				}
 				len = 0;
 				if (devc->num_samples == (devc->num_block_bytes - SIGLENT_HEADER_SIZE)) {
